@@ -1,4 +1,5 @@
 site_name: AXE Kreedz Docs
+site_url: https://docs.axekz.com/
 theme:
   name: material
   features:
