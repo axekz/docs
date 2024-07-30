@@ -1,7 +1,7 @@
 # CFG Style Testing
 
 
-``` title="null.cfg" linenums="1"
+```cs title="null.cfg"
 bind W "+mfwd"
 bind S "+mback"
 bind A "+mleft"
