@@ -7,14 +7,14 @@
 * `rtv` - 投票换图
 
 ## 皮肤类指令
-* `!skins` - 打开模型选择菜单
-* `!cw` - 打开自定义武器设置菜单（仅6-10服）
+* `!skin` - 打开模型选择菜单
+* `!cw` - 打开自定义武器模型菜单
 * `!ws` - 打开武器皮肤设置菜单
 * `!knife` - 打开刀型选择菜单
 
 ## 娱乐类指令
 * `!emoji` - 在头上显示表情
-* `!dance` - 跳舞
+* `!dance`/`!emotes` - 跳舞
 * `!pts` - 打开喷图设置菜单
 * `!pt` - 喷图
 * `!tp` - 开启第三人称
@@ -31,19 +31,22 @@
 * `!greplay` - 查看全球录像(下载时请暂停计时，不然可能会导致计时停止)
 * `!nv` - 开启夜视
 * `!nvs` - 打开夜视设置(觉得夜视不亮请使用此指令更换模板)
+* `+paint_alt` 喷涂 (不同于gokz自带的喷涂，这个所有人可见)
+* `!paintcolour`/`!paintcolor` 设置喷涂颜色
+* `!paintsize` 设置喷涂大小
 
 ### more-stats
 * `!morestats` - 在控制台显示morestats指令
-* `!pausesegment`/`!unpausesegment`/`!resumesegment`/`!togglesegment` - 切换片段录制
-* `!resetsegment` - 重置细分的所有统计信息
-* `!postrunstats` - 在运行结束时显示所有运行统计信息
-* `!bhopstats` - 显示bhop统计. 用法 `!bhopstats <s> <m>`
+* `!pausesegment`/`!unpausesegment`/`!resumesegment`/`!togglesegment` - 切换分段录制
+* `!resetsegment` - 重置分段的所有统计信息
+* `!postrunstats` - 在完成计时时显示所有统计信息
+* `!bhopstats` - 显示bhop数据统计. 用法 `!bhopstats <s> <m>`
 * `!perfstreaks <s> <m>` - 显示性能条纹
-* `!scrollstats <s> <m>` - 显示滚动统计
-* `!chatscrollstats` - 在聊天中显示实时滚动统计信息
+* `!scrollstats <s> <m>` - 显示滚轮统计
+* `!chatscrollstats` - 在聊天中显示实时滚轮信息
 * `!chatbhopstats <s> <m>` - 在聊天中显示bhop统计信息，类似于GOKZ的!bhopcheck
 * `!resetcount` / `!rcount <s/map> <c> <m>` - 显示重置计数
-* `!completioncount` / `!ccount <s/map> <c> <m>` - 显示重置和完成计数
+* `!completioncount` / `!ccount <s/map> <c> <m>` - 显示地图完成次数数
 * `!procompletioncount1` / `!pccount <s/map> <c> <m>` - 显示重置和专业完成计数
 * `!chatairstats` - 在聊天中显示实时空中加速统计信息
 * `!airstats <s> <m>`- 显示空中加速统计数据
@@ -227,7 +230,7 @@
 
 ### 分发武器
 * `!weapon <player/@me/@all> <weapon_name>` - 给某人分发武器 例如：`!weapon cinyan10 awp`
- 
+
 
 ### gokz-GlobalAPI
 
