@@ -62,21 +62,22 @@
 * `!distbughelp` - 在控制台显示distbug指令
 * `!perfstats` - 显示bhop数据统计
 
-## GOKZ指令
+## GOKZ 插件
 
 ### gokz-core
 
-* `!safe`/`!sg`/`!safeguard` - 开启存点保护模式
-* `!pro` - 开启裸跳保护模式
+* `!safe`/`!sg`/`!safeguard` - 开启存点计时保护
+* `!pro` - 开启裸跳计时保护
 * `!options`/`!o` - 打开设置菜单.
-* `!checkpoint` - 设置存点.
-* `!gocheck` - 传送到存点.
-* `!prev` - 上一个存点.
-* `!next` - 下一个存点.
-* `!undo` - 撤回传送.
+* `!checkpoint` - 存点
+* `!gocheck` - 读点
+* `!prev` - 上一个存点
+* `!next` - 下一个存点
+* `!undo` - 撤回传送
 * `!start`/`!restart`/`!r` - 传送回起点.
-* `!searchstart` - 寻找并传送到起点. 用法: `!searchstart <main/#course>`
-* `!end` - 传送到终点. 用法: `!end <main/#course>`.
+* `!searchstart` - 寻找并传送到起点. 用法: `!searchstart [main/#course]` 例如: `!searchstart 2` 为搜索奖励关2的起点，不加参数则默认为主关起点
+
+* `!end` - 传送到终点. 用法: `!end [main/#course]`.
 * `!setstartpos`/`!ssp` - 自定义起始位置.
 * `!clearstartpos`/`!csp` - 清除自定义起始位置.
 * `!main`/`!m` - 传送到主关卡的起点.
@@ -90,23 +91,23 @@
 * `!simplekz`/`!skz`/`!s` - 切换到SKZ模式.
 * `!kztimer`/`!kzt`/`!k` - 切换到KZT模式.
 * `!nc` - 开关飞行.
-* `!ncnt` - 开关忽略触发器的飞行 (不会被板子传送) (noclip-notrigger).
+* `!ncnt` - 开关忽略trigger的飞行 (不会被板子传送) (noclip no trigger).
 * `+noclip` - 飞行 (绑键使用).
-* `+noclipnt` - 忽略触发器的飞行 (绑键使用).
+* `+noclipnt` - 忽略trigger的飞行 (绑键使用).
 
 ### gokz-hud
 
 * `!menu`/`!cpmenu` - 开关显示存点菜单.
 * `!adv` - 切换高级/简易存点菜单.
 * `!panel` - 开关中心面板的显示.
-* `!timerstyle` - 切换计时器文本显示的样式.
+* `!timerstyle` - 切换计时器文本显示整数/小数.
 * `!timertype` - 计时器是否显示NUB/PRO.
 * `!speed` - 开关速度显示.
 * `!hideweapon` - 隐藏手臂.
 
 ### gokz-tips
 
-* `!tips` - 开关小贴士发送.
+* `!tips` - 开关小贴士推送.
 
 ### gokz-quiet
 
@@ -131,6 +132,13 @@
 
 * `!saveloc` - 储存一个位置. 用法: `!saveloc <name>`
 * `!loadloc` - 加载位置. 用法: `!loadloc <#id OR name>`
+* > 例如你存了个点
+  >
+  > [KZT] Exa : !saveloc laowo
+  > AXE | Saved #0 laowo
+  >
+  > 可以用 `!loadloc laowo` 或者 `!loadloc #0` 来读这个点
+
 * `!locmenu` - 打开位置菜单.
 * `!nameloc` - 命名位置. 用法: `!nameloc <#id> <name>`
 
@@ -210,7 +218,28 @@
 * `!profileoptions`/`!pfo` - 打开个人资料设置.
 * `!ranks` - 显示段位所需积分.
 
+### gokz-anticheat
 
+* `!bhopcheck` - 显示bhop统计报告.
+
+### gokz-localdb
+
+* `!savetimersetup`/`!sts` - 将当前计时器设置（开始位置和虚拟按钮）保存到数据库.
+* `!loadtimersetup`/`!lts` - 从数据库加载并锁定计时器设置（开始位置和虚拟按钮）.
+* `!setcheater` - 将某人设置为作弊者. 用法: `!setcheater <STEAM_1:X:X>`
+* `!setnotcheater` - 将某人设置为非作弊者. 用法: `!setnotcheater <STEAM_1:X:X>`
+* `!deletebestjump` - 删除某人的最佳跳跃数据. 用法: `!deletebestjump <STEAM_1:X:X> <mode> <jump type> <block?>`
+* `!deletealljumps` - 删除某人的所有跳跃数据. 用法: `!deletealljumps <STEAM_1:X:X>`
+* `!deletejump` - 通过jumpid删除跳跃数据. 用法: `!deletejump <id>`
+* `!deletetime` - 通过计时ID删除计时. 用法: `!deletetime <id>`
+
+### gokz-localranks
+
+* `!updatemappool` - 更新位于`cfg/sourcemod/gokz/gokz-localranks-mappool.cfg`的地图池
+
+### GlobalAPI
+
+* `!globalapi_reload_apikey` - 重新加载GlobalAPI密钥
 
 ## 管理员指令
 
@@ -231,36 +260,9 @@
 ### 分发武器
 * `!weapon <player/@me/@all> <weapon_name>` - 给某人分发武器 例如：`!weapon cinyan10 awp`
 
-
-### gokz-GlobalAPI
-
-* `!globalapi_reload_apikey` - 重新加载GlobalAPI密钥
-
-### gokz-anticheat
-
-* `!bhopcheck` - 显示bhop统计报告.
-
-### gokz-localdb
-
-* `!savetimersetup`/`!sts` - 将当前计时器设置（开始位置和虚拟按钮）保存到数据库.
-* `!loadtimersetup`/`!lts` - 从数据库加载并锁定计时器设置（开始位置和虚拟按钮）.
-* `!setcheater` - 将某人设置为作弊者. 用法: `!setcheater <STEAM_1:X:X>`
-* `!setnotcheater` - 将某人设置为非作弊者. 用法: `!setnotcheater <STEAM_1:X:X>`
-* `!deletebestjump` - 删除某人的最佳跳跃数据. 用法: `!deletebestjump <STEAM_1:X:X> <mode> <jump type> <block?>`
-* `!deletealljumps` - 删除某人的所有跳跃数据. 用法: `!deletealljumps <STEAM_1:X:X>`
-* `!deletejump` - 通过jumpid删除跳跃数据. 用法: `!deletejump <id>`
-* `!deletetime` - 通过计时ID删除计时. 用法: `!deletetime <id>`
-
-### gokz-localranks
-
-* `!updatemappool` - 更新位于`cfg/sourcemod/gokz/gokz-localranks-mappool`的地图池.cfg.
-
 ### LJ房传送
 * `!setlj` - 设置LJ房
 * `!dellj` - 删除设置的LJ房
 
 ### more-stats
 * `!morestatsdelete <UID> <all/bhop/reset/air>`- 删除所选玩家的统计信息。UID是玩家的SteamID3中的数字：[U:1:XXXXXXXXX]
-
-
-
